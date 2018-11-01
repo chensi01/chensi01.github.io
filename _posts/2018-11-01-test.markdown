@@ -1,0 +1,130 @@
+---
+layout: post
+title: NCR & DL-based RecSys（20181031-组会后的更新）
+tags:
+- test_tag_1
+- test_tag_2
+categories: test_cat
+description: 描述。
+---
+
+## 讨论结果
+### 1.三个方向
+ - 外积+CNN【优先级B】
+ - MLP vs MLP+不同bias(两层) 【优先级A】
+ - 不同user preference【优先级C】
+### 2.下周讲论文PPT
+### 3.下周要问【theta多不多余】【为啥theta和k-1有关，只要不低于1/k-1就可以？？？】
+-----------------------------------------------------------------------------------------------------------
+
+## 一、 非补偿模型
+### （一）问题
+  1. lexicographic or conjunctive  **rule** ?
+        - theta表示lexicographic rule，阈值b_u,k表示conjunctive rule
+  2. **theta** 的含义？【【不懂呀！！！！】】
+        - 为什么要求theta>0？是theta<0不满足非补偿还是？
+        - theta作为两个rule之间的权衡？theta>0才能谈权衡？
+        - MF里的theta为什么要exp(theta)：为了保证exp(theta)>0
+
+  3. 怎么选**prominent aspect**  : sample by exp(u)/sum exp(u)
+        - 为什么要有exp:常用的处理方式（大概就是exp之后可以更加突出重要元素的权重叭==）
+        - **为什么sample?不直接选u_k最大的k为prominent aspect？**：可以选，但是要怎么学？不好学。不能梯度下降。
+        - **如果用sample，结果看起来还是补偿的：** 是滴，所以之后还需要处理这个部分
+        >MF_N = sum **p** _(k为prominent aspect) * **score** _(k为prominent aspect)
+        
+      -  使用补偿规则的模型，把**u_k学的大一点**，是不是和加theta的效果是一样的?【【下周问】】
+  4. BT_N的式子(11)，累乘还是累加：是累加（os:reviewer都不看式子的咩？？）
+
+   
+      
+
+### （二）Depp Learning + NCR
+##### Multi-Layer Perceptron
+1. MLP可不可以加一个attentional layer【how does attentional layer works？】
+2. 改MLP结构，每个隐层的每个神经元都拥有不同的bias，把NCR规则嵌入到MLP。
+   >1.怎么训练:老师说是可以训练的！！！
+  >2.可解释性：每个参数的含义不如现在看起来明确【老师说这个要看我们自己怎么做怎么解释勒】
+  >3.老师：MLP感觉效果不会好，因为它很多层会更复杂（同等效果下，模型越简洁越好），只做两层的话又不够deep【【先做一个两层的MLP vs 不同bias的MLP,看结果是怎样的吧！！！！！！】】
+
+
+##### max-pooling
+1. 提取image/audio/video特征
+2. ConvNCF: CNN+NCF 2017 SIGIR【【这个可以看一看！！！】】
+    > outer product：u*v 点积改外积，得到的矩阵称为interaction map
+    > CNN:在interaction map上做CNN，输出隐藏状态
+    > 理论说明：外积考虑到了每一个特征维度之间的关系;CNN中每一层是前一层四阶关系的刻画,特征维度之间的高阶关系
+3. max-pooling是找prominent aspect还是作为non-prominent部分的阈值？
+    > lexicographic:maxpooling出item最突出的特征，看是不是user的prominent aspect
+
+##### attention model
+1. 注意力机制
+    > 视觉注意力机制:人类视觉对需要重要区域投入更多注意力。选择出对当前任务目标更关键的信息。
+    > Attention模型的结果就是在每次识别时，首先计算每个特征的 **权值** ，然后对特征进行加权求和.(权值越大，该特征对当前识别的贡献就大。 )
+    > 加性注意力机制(additive attention)：分数α被一个前馈网络参数化的个网络含有一个隐藏层,tanh激活函数。
+
+
+2. user对不同aspect的注意力
+    - 求出注意力后还是要加权求和，是补偿规则（和现在论文里的感觉一样）
+    - MLP里加一个attention layer做加权求和？
+
+3. Attentive Collaborative Filtering 2017 SIGIR
+    > 对于implicit feedback 只有{0,1}
+    > item层面用Attention Model去学习用户对商品打分的偏好，传统的CF方法，只注重user和item的关系，但是其实这些关系有些情况下也是多样的，比如点赞关系，有可能你并不是真的喜欢，而是只是因为发的人是你的好友，你就点赞了。所以需要Attention Model去捕捉这种信息。 
+    > 计算用户的item attention，用attention和item latent feature调整user latent feature
+
+
+##### More about NCR
+- user对不同item最关心的aspect是不同的【【这个像是给用户多个preference，有人做过，感觉不够新】】
+    > 场景：-----pa
+    > 做法： exp(u_k)/sum exp(u_k)是k 为prominent aspect的global概率。
+    > 给每个item除了V之外再学一个P，P可以解释为“user买这个item时最关注哪个aspect，item层面的”。1.选prominent aspect时在u和p之前做一个权衡。2.设两个theta。3。item聚类，每类item一个P
+
+
+
+
+## 二、 The strength of DL-based rec model:
+##### 非线性变换
+  - 好处：线性关系的假设过于简单&需要捕获高阶关系：non-linear activations(relu,sigmoid,tanh)+linear model(MF,FM)
+  - MLP+MF
+  - 自编码器（Auto-Encoder）:在输出层填补评分矩阵的空白
+  - CNN:CNN+MF,内积改成外积，对外积的结果做CNN
+  - RBM(受限玻尔兹曼机)：RBM+CF
+  - attention:item层面用Attention Model去学习用户对商品打分的偏好
+##### 表达学习
+  - 好处：减少花费在特征工程上的努力
+  - MLP：模型的某部分使用了MLP，或者用MLP从文本/图像/tag中学特征表达
+  - 自编码器（Auto-Encoder）:bottle层作为低维特征？AE+PMF
+  - CNN学图像/视频特征,与MF/BPR融合
+  - RNN:text feature/evolution of u/i feature
+##### 序列数据建模
+- 随时间变化的用户偏好和项目特征/文本
+- CNN:graph CNN(顶点域转换为频域) 把推荐看作是预测link
+- RNN:sess-rec/sequential-rec(u_p&i_f随时间变化)
+- attention:增强RNN/CNN对序列数据建模的效果
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
