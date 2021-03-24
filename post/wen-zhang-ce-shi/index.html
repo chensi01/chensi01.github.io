@@ -2,18 +2,22 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>文章测试 | Gridea</title>
-<link rel="shortcut icon" href="https://chensi01.github.io//favicon.ico?v=1616552864486">
+<title>1.统计学习方法概论 | Gridea</title>
+<link rel="shortcut icon" href="https://chensi01.github.io//favicon.ico?v=1616575314583">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://chensi01.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="文章测试 | Gridea - Atom Feed" href="https://chensi01.github.io//atom.xml">
+<link rel="alternate" type="application/atom+xml" title="1.统计学习方法概论 | Gridea - Atom Feed" href="https://chensi01.github.io//atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="😄
-" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="1.本章内容
+基本概念
+
+统计学习是关于计算机基于数据构建概率统计模型，并运用模型对数据进行预测与分析的学科。
+统计学习关于数据的基本假设：同类数据具有一定的统计规律性。
+监督学习关于数据的基本假设：XXX和YYY具有联合概率分布P(X,Y..." />
+    <meta name="keywords" content="统计学习方法" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -22,7 +26,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://chensi01.github.io/">
-  <img class="avatar" src="https://chensi01.github.io//images/avatar.png?v=1616552864486" alt="">
+  <img class="avatar" src="https://chensi01.github.io//images/avatar.png?v=1616575314583" alt="">
   </a>
   <h1 class="site-title">
     Gridea
@@ -75,25 +79,77 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              文章测试
+              1.统计学习方法概论
             </h2>
             <div class="post-info">
               <span>
                 2021-03-24
               </span>
               <span>
-                0 min read
+                3 min read
               </span>
+              
+                <a href="https://chensi01.github.io/tag/T7ix7l6Xw/" class="post-tag">
+                  # 统计学习方法
+                </a>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>😄</p>
+                <h1 id="1本章内容">1.本章内容</h1>
+<h2 id="基本概念">基本概念</h2>
+<ul>
+<li>统计学习是关于计算机基于数据构建概率统计模型，并运用模型对数据进行预测与分析的学科。</li>
+<li>统计学习关于数据的基本假设：同类数据具有一定的统计规律性。</li>
+<li>监督学习关于数据的基本假设：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span></span></span></span>具有联合概率分布<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo separator="true">,</mo><mi>Y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(X,Y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mclose">)</span></span></span></span>，且训练数据和测试数据是依<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo separator="true">,</mo><mi>Y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(X,Y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mclose">)</span></span></span></span>独立同分布产生的。</li>
+<li>监督学习关于模型的假设：假设模型属于某个假设空间。</li>
+<li>在监督学习中，输入和输出对称为样本；在无监督学习中输入是样本。</li>
+</ul>
+<h2 id="统计学习三要素模型-策略和算法">统计学习三要素：模型、策略和算法</h2>
+<ul>
+<li>损失函数是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>X</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(X)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mclose">)</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span></span></span></span>的非负实值函数。</li>
+<li>损失函数度量模型一次预测的好坏，风险函数（期望损失）度量平均意义下模型预测的好坏。</li>
+<li>期望风险：指损失函数的期望，代表理论上模型关于联合概率分布<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo separator="true">,</mo><mi>Y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(X,Y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mclose">)</span></span></span></span>的平均意义下的损失。学习的目标是选择期望风险最小的模型，需要用到联合分布，但联合分布未知，所以监督学习是一个病态问题。</li>
+<li>经验风险：模型关于训练数据集的平均损失。</li>
+<li>结构风险：在经验风险上加上表示模型复杂度的正则化项。</li>
+</ul>
+<h2 id="正则化与交叉验证">正则化与交叉验证</h2>
+<ul>
+<li>从贝叶斯的角度看，正则化项对应模型的先验概率。可以假设复杂的模型有较小的先验概率，简单的模型有较大的先验概率。</li>
+</ul>
+<h2 id="泛化能力">泛化能力</h2>
+<ul>
+<li>模型对未知数据预测的误差即为泛化误差，即模型的期望风险。</li>
+<li>泛化误差上界：通过比较学习方法的泛化误差上界来比较优劣。</li>
+<li>泛化误差上界的性质：（1）样本容量的函数；（2）假设空间大小的函数。</li>
+</ul>
+<h2 id="生成模型与判别模型">生成模型与判别模型</h2>
+<ul>
+<li>监督学习方法分为生成方法和判别方法。（1）生成方法学习联合概率分布<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo separator="true">,</mo><mi>Y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(X,Y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mclose">)</span></span></span></span>，然后求出条件概率分布<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>Y</mi><mi mathvariant="normal">∣</mi><mi>X</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(Y|X)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mclose">)</span></span></span></span>；（2）判别方法直接学习条件概率分布<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>Y</mi><mi mathvariant="normal">∣</mi><mi>X</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(Y|X)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mclose">)</span></span></span></span>或决策函数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>X</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(X)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mclose">)</span></span></span></span>。</li>
+</ul>
+<h1 id="2习题">2.习题</h1>
+<ul>
+<li>极大似然估计（Maximum Likelihood Estimation，MLE）和贝叶斯估计（Bayesian Estimation）是统计推断中两种最常用的参数估计方法</li>
+<li><a href="https://datawhalechina.github.io/statistical-learning-method-solutions-manual/#/chapter1/chapter1">习题解答</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/61593112">极大似然估计和贝叶斯估计</a></li>
+</ul>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li><a href="#1%E6%9C%AC%E7%AB%A0%E5%86%85%E5%AE%B9">1.本章内容</a>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">基本概念</a></li>
+<li><a href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E4%B8%89%E8%A6%81%E7%B4%A0%E6%A8%A1%E5%9E%8B-%E7%AD%96%E7%95%A5%E5%92%8C%E7%AE%97%E6%B3%95">统计学习三要素：模型、策略和算法</a></li>
+<li><a href="#%E6%AD%A3%E5%88%99%E5%8C%96%E4%B8%8E%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81">正则化与交叉验证</a></li>
+<li><a href="#%E6%B3%9B%E5%8C%96%E8%83%BD%E5%8A%9B">泛化能力</a></li>
+<li><a href="#%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B">生成模型与判别模型</a></li>
+</ul>
+</li>
+<li><a href="#2%E4%B9%A0%E9%A2%98">2.习题</a></li>
+</ul>
+
               </div>
             </div>
           </article>
