@@ -1,71 +1,109 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://chensi01.github.io/</id>
-    <title>Gridea</title>
-    <updated>2021-03-25T08:04:03.371Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://chensi01.github.io/"/>
-    <link rel="self" href="https://chensi01.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
-    <logo>https://chensi01.github.io/images/avatar.png</logo>
-    <icon>https://chensi01.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, Gridea</rights>
-    <entry>
-        <title type="html"><![CDATA[2.感知机]]></title>
-        <id>https://chensi01.github.io/post/2gan-zhi-ji/</id>
-        <link href="https://chensi01.github.io/post/2gan-zhi-ji/">
-        </link>
-        <updated>2021-03-25T06:25:02.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="1本章重点">1.本章重点</h2>
-<ul>
-<li>感知机的模型、策略和算法。</li>
-<li>感知机学习算法的收敛性和对偶形式。</li>
-</ul>
-<h2 id="2习题">2.习题</h2>
-<h3 id="21-验证感知机为什么不能表达异或xor">2.1 验证感知机为什么不能表达异或（XOR）</h3>
-<p>感知机模型是线性分类模型，对应于特征空间中将实例划分为正负两例的分离超平面。<br>
-由下面的XOR的示意图可得，不存在一条直线将正类和负类分隔开，即XOR问题是线性不可分的。<br>
-因此感知机不能表示异或。</p>
-<pre><code class="language-python">#根据输入空间X和XOR规则生成实例
-import pandas as pd
-X,data=[-1,1],[]
-for x1 in X:
-    for x2 in X:
-        y = -1 if (x1==x2) else 1
-        data.append([x1,x2,y])
-data = pd.DataFrame(data,index=None,columns=['x1','x2','y'])
-print(data)
-</code></pre>
-<pre><code>   x1  x2  y
-0  -1  -1 -1
-1  -1   1  1
-2   1  -1  1
-3   1   1 -1
-</code></pre>
-<pre><code class="language-python">#根据XOR的数据实例绘制示意图
-import matplotlib
-from matplotlib import pyplot as plt 
-plt.xlim(-2,2)
-plt.ylim(-2,2)
-plt.xticks(range(-2,3))
-plt.yticks(range(-2,3))
-plt.xlabel('x1')
-plt.ylabel('x2')
-plt.plot(data[data['y']==1]['x1'],data[data['y']==1]['x2'],'ro')
-plt.plot(data[data['y']==-1]['x1'],data[data['y']==-1]['x2'],'gx')
-plt.show()
-</code></pre>
-<pre><code>![](https://chensi01.github.io//post-images/1616659407689.png)
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[1.统计学习方法概论]]></title>
-        <id>https://chensi01.github.io/post/1tong-ji-xue-xi-fang-fa-gai-lun/</id>
-        <link href="https://chensi01.github.io/post/1tong-ji-xue-xi-fang-fa-gai-lun/">
-        </link>
-        <updated>2021-03-24T02:25:19.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="1本章内容">1.本章内容</h1>
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>1.统计学习方法概论 | Gridea</title>
+<link rel="shortcut icon" href="https://chensi01.github.io//favicon.ico?v=1616659439264">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://chensi01.github.io//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="1.统计学习方法概论 | Gridea - Atom Feed" href="https://chensi01.github.io//atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="1.本章内容
+基本概念
+
+统计学习是关于计算机基于数据构建概率统计模型，并运用模型对数据进行预测与分析的学科。
+统计学习关于数据的基本假设：同类数据具有一定的统计规律性。
+监督学习关于数据的基本假设：XXX和YYY具有联合概率分布P(X,Y..." />
+    <meta name="keywords" content="统计学习方法" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://chensi01.github.io/">
+  <img class="avatar" src="https://chensi01.github.io//images/avatar.png?v=1616659439264" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/tag/T7ix7l6Xw/" class="menu">
+          统计学习方法
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              1.统计学习方法概论
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-03-24
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+                <a href="https://chensi01.github.io/tag/T7ix7l6Xw/" class="post-tag">
+                  # 统计学习方法
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h1 id="1本章内容">1.本章内容</h1>
 <h2 id="基本概念">基本概念</h2>
 <ul>
 <li>统计学习是关于计算机基于数据构建概率统计模型，并运用模型对数据进行预测与分析的学科。</li>
@@ -102,38 +140,115 @@ plt.show()
 <li><a href="https://datawhalechina.github.io/statistical-learning-method-solutions-manual/#/chapter1/chapter1">习题解答</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/61593112">极大似然估计和贝叶斯估计</a></li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://chensi01.github.io/post/hello-gridea/</id>
-        <link href="https://chensi01.github.io/post/hello-gridea/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
-]]></content>
-    </entry>
-</feed>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#1%E6%9C%AC%E7%AB%A0%E5%86%85%E5%AE%B9">1.本章内容</a>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">基本概念</a></li>
+<li><a href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E4%B8%89%E8%A6%81%E7%B4%A0%E6%A8%A1%E5%9E%8B-%E7%AD%96%E7%95%A5%E5%92%8C%E7%AE%97%E6%B3%95">统计学习三要素：模型、策略和算法</a></li>
+<li><a href="#%E6%AD%A3%E5%88%99%E5%8C%96%E4%B8%8E%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81">正则化与交叉验证</a></li>
+<li><a href="#%E6%B3%9B%E5%8C%96%E8%83%BD%E5%8A%9B">泛化能力</a></li>
+<li><a href="#%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B">生成模型与判别模型</a></li>
+</ul>
+</li>
+<li><a href="#2%E4%B9%A0%E9%A2%98">2.习题</a></li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://chensi01.github.io/post/hello-gridea/">
+              <h3 class="post-title">
+                Hello Gridea
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '7ac0335b63fa00564131',
+    clientSecret: '3a63c5c50441dce0961615535c06d21374726b29',
+    repo: 'chensi01.github.io',
+    owner: 'chensi01',
+    admin: ['chensi01'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://chensi01.github.io//atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
