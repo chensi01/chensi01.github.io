@@ -2,23 +2,21 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>2.感知机 | Chensi&#39;s Blog</title>
+<title>3.k近邻法 | Chensi&#39;s Blog</title>
 <link rel="shortcut icon" href="https://chensi01.github.io//favicon.ico?v=1616912829812">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://chensi01.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="2.感知机 | Chensi&#39;s Blog - Atom Feed" href="https://chensi01.github.io//atom.xml">
+<link rel="alternate" type="application/atom+xml" title="3.k近邻法 | Chensi&#39;s Blog - Atom Feed" href="https://chensi01.github.io//atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="1.本章重点
+    <meta name="description" content="本章重点
+习题
+习题代码链接
+习题3.1
 
-感知机的模型、策略和算法。
-感知机学习算法的收敛性和对偶形式。
-
-2.习题
-习题2.1
-感知机模型是线性分类模型，对应于特征空间中将实例划分为正负两例的分离超平面。由下面的XOR的示意图可得，不存在一条直线将正类和负类分隔开..." />
+..." />
     <meta name="keywords" content="统计学习方法" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -87,14 +85,14 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              2.感知机
+              3.k近邻法
             </h2>
             <div class="post-info">
               <span>
-                2021-03-25
+                2021-03-26
               </span>
               <span>
-                3 min read
+                1 min read
               </span>
               
                 <a href="https://chensi01.github.io/tag/T7ix7l6Xw/" class="post-tag">
@@ -105,115 +103,21 @@
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <h2 id="1本章重点">1.本章重点</h2>
-<ul>
-<li>感知机的模型、策略和算法。</li>
-<li>感知机学习算法的收敛性和对偶形式。</li>
-</ul>
-<h2 id="2习题">2.习题</h2>
-<h3 id="习题21">习题2.1</h3>
-<p><strong>感知机模型是线性分类模型</strong>，对应于特征空间中将实例划分为正负两例的分离超平面。由下面的XOR的示意图可得，不存在一条直线将正类和负类分隔开，即<strong>XOR问题是线性不可分的</strong>。因此感知机不能表示异或。<br>
-<img src="https://chensi01.github.io//post-images/1616659407689.png" alt="" loading="lazy"></p>
-<pre><code class="language-python">#根据输入空间X和XOR规则生成实例
-import pandas as pd
-X,data=[-1,1],[]
-for x1 in X:
-    for x2 in X:
-        y = -1 if (x1==x2) else 1
-        data.append([x1,x2,y])
-data = pd.DataFrame(data,index=None,columns=['x1','x2','y'])
-print(data)
-</code></pre>
-<pre><code>   x1  x2  y
-0  -1  -1 -1
-1  -1   1  1
-2   1  -1  1
-3   1   1 -1
-</code></pre>
-<pre><code class="language-python">#根据XOR的数据实例绘制示意图
-import matplotlib
-from matplotlib import pyplot as plt 
-plt.xlim(-2,2)
-plt.ylim(-2,2)
-plt.xticks(range(-2,3))
-plt.yticks(range(-2,3))
-plt.xlabel('x1')
-plt.ylabel('x2')
-plt.plot(data[data['y']==1]['x1'],data[data['y']==1]['x2'],'ro')
-plt.plot(data[data['y']==-1]['x1'],data[data['y']==-1]['x2'],'gx')
-plt.show()
-</code></pre>
-<h3 id="习题22">习题2.2</h3>
-<pre><code class="language-python">import numpy as np
-import pandas as pd
-X_train = np.array([[3,3],[4,3],[1,1]])
-Y = np.array([1,1,-1])
-</code></pre>
-<pre><code class="language-python">import matplotlib.pyplot as plt
-def plot(w,b):
-    # 绘制感知机
-    X1 = [0,5]
-    X2 = [-(b+w[0]*x1)/(w[1]+1e-7) for x1 in X1]
-    plt.plot(X1,X2)
-    #     
-    plt.xlabel('x1')
-    plt.ylabel('x2')
-    plt.xlim(0,5)
-    plt.ylim(-3,5)
-    plt.xticks(range(6))
-    plt.yticks(range(-3,6))
-    # 绘制训练数据
-    plt.plot(X_train[Y==1][:,0],X_train[Y==1][:,1],'ro')
-    plt.plot(X_train[Y==-1][:,0],X_train[Y==-1][:,1],'go')
-    plt.show()
-</code></pre>
-<pre><code class="language-python">class Perceptron:
-    def __init__(self):
-        self.max_iter = 100
-        self.lr = 1
-        self.input_dim = 2
-        self.build_model()
-    def build_model(self):
-        self.w = np.zeros(self.input_dim)
-        self.b = 0
-    def predict(self,x):
-        output = np.matmul(self.w,x)+self.b
-        return np.sign(output)
-    def fit(self,X_train,Y):
-        cur_iter = 0
-        while cur_iter&lt;self.max_iter:
-            fail_count = 0
-            for x,y in zip(X_train,Y):
-                y_hat=self.predict(x)
-                if y*(np.matmul(self.w,x)+self.b)&lt;=0:
-                    fail_count+=1
-                    self.w += self.lr*y*x
-                    self.b += self.lr*y
-                    plot(self.w,self.b)
-            if fail_count==0:
-                break 
-</code></pre>
-<pre><code class="language-python">model = Perceptron()
-model.fit(X_train,Y)
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="https://chensi01.github.io//post-images/1616670259364.png" alt="" loading="lazy"></figure>
-<h3 id="习题23">习题2.3</h3>
-<ul>
-<li>凸壳可以看作是点集合的边界，可以用集合内所有点的线性组合构造。在二维的欧氏空间中，凸壳可以想做一条刚好包围这所有点的橡皮圈。</li>
-<li><a href="https://datawhalechina.github.io/statistical-learning-method-solutions-manual/#/chapter2/chapter2?id=%e4%b9%a0%e9%a2%9822">习题解答</a></li>
-</ul>
+                <h2 id="本章重点">本章重点</h2>
+<h2 id="习题">习题</h2>
+<p><a href="https://github.com/chensi01/lihang-solution-code">习题代码链接</a></p>
+<h3 id="习题31">习题3.1</h3>
+<figure data-type="image" tabindex="1"><img src="https://chensi01.github.io//post-images/1616735492285.png" alt="" loading="lazy"></figure>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#1%E6%9C%AC%E7%AB%A0%E9%87%8D%E7%82%B9">1.本章重点</a></li>
-<li><a href="#2%E4%B9%A0%E9%A2%98">2.习题</a>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E9%87%8D%E7%82%B9">本章重点</a></li>
+<li><a href="#%E4%B9%A0%E9%A2%98">习题</a>
 <ul>
-<li><a href="#%E4%B9%A0%E9%A2%9821">习题2.1</a></li>
-<li><a href="#%E4%B9%A0%E9%A2%9822">习题2.2</a></li>
-<li><a href="#%E4%B9%A0%E9%A2%9823">习题2.3</a></li>
+<li><a href="#%E4%B9%A0%E9%A2%9831">习题3.1</a></li>
 </ul>
 </li>
 </ul>
@@ -228,9 +132,9 @@ model.fit(X_train,Y)
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://chensi01.github.io/post/1tong-ji-xue-xi-fang-fa-gai-lun/">
+            <a href="https://chensi01.github.io/post/2gan-zhi-ji/">
               <h3 class="post-title">
-                1.统计学习方法概论
+                2.感知机
               </h3>
             </a>
           </div>
