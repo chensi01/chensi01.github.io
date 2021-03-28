@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chensi01.github.io/</id>
     <title>Chensi&apos;s Blog</title>
-    <updated>2021-03-28T06:27:49.317Z</updated>
+    <updated>2021-03-28T11:43:56.029Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chensi01.github.io/"/>
     <link rel="self" href="https://chensi01.github.io/atom.xml"/>
@@ -10,6 +10,50 @@
     <logo>https://chensi01.github.io/images/avatar.png</logo>
     <icon>https://chensi01.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Chensi&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[《爱的艺术》]]></title>
+        <id>https://chensi01.github.io/post/lesslessai-de-yi-zhu-greatergreater/</id>
+        <link href="https://chensi01.github.io/post/lesslessai-de-yi-zhu-greatergreater/">
+        </link>
+        <updated>2021-03-28T10:53:58.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="序">序</h2>
+<ul>
+<li>爱，并不是任何人都可以享受的生活情趣，而是与人的成熟程度相关联的。如果一个人不是及其主动地发展自己的全部人格，使自己具有一种能动的生活态度，那么对爱付出的努力必将如同付诸流水。</li>
+<li>爱是一门艺术，需要知识和努力。</li>
+</ul>
+<h2 id="第一章-爱是一门艺术吗">第一章 爱是一门艺术吗？</h2>
+<p>为什么大家觉得爱不需要学习：</p>
+<ul>
+<li>把爱的问题看作“被爱”的问题，而不是主动去爱和爱的能力的问题。爱的问题是如何能够被爱，如何变得可爱。</li>
+<li>把爱的问题看作关于“对象”的问题，而不是身心能力的问题。为什么看中“对象”：整个文化以后买鱼和互利交换的观念为基础。只有当对方“人性商品”和自己可能交换时，坠入情网的感觉才会发展起来。我尽力满足成交条件，对象也应从社会价值的立场认为我称其心意。两个人考虑各自的交换价值的限度，认为对方是市场上能得到的最佳对象。</li>
+<li>把“堕入”爱网时的最初体验和存在于爱之中的持久状态混淆。fall in love v.s. be in love。前者可能只证明了先前的孤独程度。</li>
+</ul>
+<p>爱是一门艺术，正如生活是一门艺术；想学会如何爱，就必须想学习音乐、绘画等艺术一样着手。学习艺术的过程分为精通理论和善于实践。要成为大师，还需要必须认为这门艺术是最高的旨趣所在。而尽管人们对爱的渴望根深蒂固，但我们总是把成功、威望、金钱、权力看得比爱重要并投入大量精力。</p>
+<h2 id="第二章-爱的理论">第二章 爱的理论</h2>
+<h3 id="21-爱-对人类存在问题的解答">2.1 爱-对人类存在问题的解答</h3>
+<p>人生而面临不确定的状态，唯有过去是确定的，关于未来则只有死亡是确定的。人意识到自己是一个分离的实体，这成了严重焦虑的根源。人类最深切的需要，就是克服这种分离，脱离其只身一人的牢笼。</p>
+<p>常见的克服分离的途径只是片面的答案：</p>
+<ul>
+<li>狂欢状态：性高潮、酗酒、毒瘾。狂欢的体验结束之后，会感到更加分离，于是更加求助于狂欢。【短暂的联合】</li>
+<li>与群体融合：个人的自我消失，归属于群体的自我。【虚假的联合】</li>
+<li>创造性活动：自身的材料融于一体。【不是人与人之间的联合】<br>
+爱能实现全面的人与人之间的融合。</li>
+</ul>
+<p>爱的不成熟形式：“共生性融合”。其消极和积极形式分别是受虐狂和施虐狂。</p>
+<ul>
+<li>
+<p>受虐狂：他是一切，我只是他的一部分，我是崇高、权力以及确定的一部分。不必做确定和冒风险。</p>
+</li>
+<li>
+<p>施虐狂：通过别人的崇拜来抬高和强化自己。<br>
+这是不完整的联合，受虐和施虐的态度往往在一个人身上用于对待不同对象。希特勒以施虐狂的方式对待人民，以受虐狂的方式对待命运、历史和自然的更高力量。</p>
+</li>
+<li>
+<p>婴儿的分离感被母亲的在场所弥补。</p>
+</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[4.朴素贝叶斯法]]></title>
         <id>https://chensi01.github.io/post/4po-su-bei-xie-si-fa/</id>
