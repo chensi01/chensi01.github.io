@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chensi01.github.io/</id>
     <title>Chensi&apos;s Blog</title>
-    <updated>2021-03-28T11:43:56.029Z</updated>
+    <updated>2021-03-28T11:57:58.063Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chensi01.github.io/"/>
     <link rel="self" href="https://chensi01.github.io/atom.xml"/>
@@ -10,6 +10,32 @@
     <logo>https://chensi01.github.io/images/avatar.png</logo>
     <icon>https://chensi01.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Chensi&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[2021 - 影视听FLAG]]></title>
+        <id>https://chensi01.github.io/post/2021-ying-shi-ting-flag/</id>
+        <link href="https://chensi01.github.io/post/2021-ying-shi-ting-flag/">
+        </link>
+        <updated>2021-03-28T11:48:38.000Z</updated>
+        <content type="html"><![CDATA[<p>BOOKS</p>
+<ul>
+<li>少有人走的路</li>
+<li>笑到最后</li>
+<li>爱的艺术️️✔️</li>
+<li>亲密关系</li>
+<li>浪潮之巅</li>
+<li>深度学习推荐系统✔️</li>
+</ul>
+<p>MOVIES &amp; SHOWS</p>
+<ul>
+<li>瘦身十律</li>
+<li>本杰明巴顿奇事✔️</li>
+<li>遗愿清单</li>
+<li>活着</li>
+<li>教父</li>
+<li>年轻气盛</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[《爱的艺术》]]></title>
         <id>https://chensi01.github.io/post/lesslessai-de-yi-zhu-greatergreater/</id>
