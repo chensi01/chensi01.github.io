@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chensi01.github.io/</id>
     <title>Chensi&apos;s Blog</title>
-    <updated>2021-04-12T13:00:39.098Z</updated>
+    <updated>2021-04-12T22:09:56.112Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chensi01.github.io/"/>
     <link rel="self" href="https://chensi01.github.io/atom.xml"/>
@@ -10,6 +10,107 @@
     <logo>https://chensi01.github.io/images/avatar.png</logo>
     <icon>https://chensi01.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Chensi&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[vscode+latex]]></title>
+        <id>https://chensi01.github.io/post/vscodelatex/</id>
+        <link href="https://chensi01.github.io/post/vscodelatex/">
+        </link>
+        <updated>2021-04-12T22:00:20.000Z</updated>
+        <content type="html"><![CDATA[<p>参考：https://blog.csdn.net/qq_28303495/article/details/89848209</p>
+<ol>
+<li>安装LaTeX Workshop插件</li>
+<li>配置
+<ol>
+<li>打开settings.json</li>
+<li>增加配置</li>
+<li>重启vscode</li>
+</ol>
+</li>
+</ol>
+<p>增加的配置如下：</p>
+<pre><code>   {
+    &quot;latex-workshop.latex.recipes&quot;: [{
+    &quot;name&quot;: &quot;xelatex&quot;,
+    &quot;tools&quot;: [
+        &quot;xelatex&quot;
+    ]
+  }, {
+    &quot;name&quot;: &quot;latexmk&quot;,
+    &quot;tools&quot;: [
+        &quot;latexmk&quot;
+    ]
+  },
+  {
+    &quot;name&quot;: &quot;pdflatex -&gt; bibtex -&gt; pdflatex*2&quot;,
+    &quot;tools&quot;: [
+        &quot;pdflatex&quot;,
+        &quot;bibtex&quot;,
+        &quot;pdflatex&quot;,
+        &quot;pdflatex&quot;
+    ]
+  }
+  ],
+  &quot;latex-workshop.latex.tools&quot;: [{
+  &quot;name&quot;: &quot;latexmk&quot;,
+  &quot;command&quot;: &quot;latexmk&quot;,
+  &quot;args&quot;: [
+    &quot;-synctex=1&quot;,
+    &quot;-interaction=nonstopmode&quot;,
+    &quot;-file-line-error&quot;,
+    &quot;-pdf&quot;,
+    &quot;%DOC%&quot;
+  ]
+  }, {
+  &quot;name&quot;: &quot;xelatex&quot;,
+  &quot;command&quot;: &quot;xelatex&quot;,
+  &quot;args&quot;: [
+    &quot;-synctex=1&quot;,
+    &quot;-interaction=nonstopmode&quot;,
+    &quot;-file-line-error&quot;,
+    &quot;%DOC%&quot;
+  ]
+  }, {
+  &quot;name&quot;: &quot;pdflatex&quot;,
+  &quot;command&quot;: &quot;pdflatex&quot;,
+  &quot;args&quot;: [
+    &quot;-synctex=1&quot;,
+    &quot;-interaction=nonstopmode&quot;,
+    &quot;-file-line-error&quot;,
+    &quot;%DOC%&quot;
+  ]
+  }, {
+  &quot;name&quot;: &quot;bibtex&quot;,
+  &quot;command&quot;: &quot;bibtex&quot;,
+  &quot;args&quot;: [
+    &quot;%DOCFILE%&quot;
+  ]
+  }],
+  &quot;latex-workshop.view.pdf.viewer&quot;: &quot;tab&quot;,
+  &quot;latex-workshop.latex.clean.fileTypes&quot;: [
+  &quot;*.aux&quot;,
+  &quot;*.bbl&quot;,
+  &quot;*.blg&quot;,
+  &quot;*.idx&quot;,
+  &quot;*.ind&quot;,
+  &quot;*.lof&quot;,
+  &quot;*.lot&quot;,
+  &quot;*.out&quot;,
+  &quot;*.toc&quot;,
+  &quot;*.acn&quot;,
+  &quot;*.acr&quot;,
+  &quot;*.alg&quot;,
+  &quot;*.glg&quot;,
+  &quot;*.glo&quot;,
+  &quot;*.gls&quot;,
+  &quot;*.ist&quot;,
+  &quot;*.fls&quot;,
+  &quot;*.log&quot;,
+  &quot;*.fdb_latexmk&quot;
+  ],
+  }
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[How to spot a liar]]></title>
         <id>https://chensi01.github.io/post/how-to-spot-a-liar/</id>
