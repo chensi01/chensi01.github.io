@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chensi01.github.io/</id>
     <title>Chensi&apos;s Blog</title>
-    <updated>2021-04-12T22:10:28.318Z</updated>
+    <updated>2021-04-15T03:28:24.043Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chensi01.github.io/"/>
     <link rel="self" href="https://chensi01.github.io/atom.xml"/>
@@ -10,6 +10,75 @@
     <logo>https://chensi01.github.io/images/avatar.png</logo>
     <icon>https://chensi01.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Chensi&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[《深度学习推荐系统》 - 推荐序]]></title>
+        <id>https://chensi01.github.io/post/lesslessshen-du-xue-xi-tui-jian-xi-tong-greatergreater-tui-jian-xu/</id>
+        <link href="https://chensi01.github.io/post/lesslessshen-du-xue-xi-tui-jian-xi-tong-greatergreater-tui-jian-xu/">
+        </link>
+        <updated>2021-04-13T03:03:33.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="key-point">key point</h1>
+<ul>
+<li>深度学习对于工业界的价值：提供了设计与实现解耦算法研发范式，提升了生产力。</li>
+<li>工业界模型设计背后真正的“银弹”：目的是解决什么样的问题。</li>
+<li>工业级深度学习2.0阶段的技术破局点：重新定义和设计新的系统架构。</li>
+</ul>
+<hr>
+<h1 id="深度学习提供了算法研发新范式">深度学习提供了算法研发新范式</h1>
+<ol>
+<li>传统机器学习（1）模型假设过于严苛（2）在计算规模巨大的工业界上难实现，要求工程师有（1）专业的建模与优化能力（2）专业的分布式计算编程能力，所以难以应用。</li>
+<li>深度学习：提供了设计与实现解耦算法研发范式，极大地提升了生产力。
+<ul>
+<li>开源的深度学习框架提供了封装好的（1）基础模块（2）优化器，降低了算法设计和实现和难度；</li>
+<li>模型的设计与实现解耦：算法工程师集中进行领域问题的理解和模型设计，软件工程师集中进行计算效率和性能的优化。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="银弹要解决什么问题">“银弹”：要解决什么问题</h1>
+<blockquote>
+<p>银弹：用来比喻具有极端有效性的解决方法，作为杀手锏、王牌等的代称。</p>
+</blockquote>
+<p>工业界的两种研发方法：</p>
+<ul>
+<li>拿着锤子找钉子：尝试各种他人的创新点。（不是能力不足，而是思维惯性和缺乏技术自信）</li>
+<li>问题驱动：定义问题，思考技术需求，寻找/构思对应的技术工具。</li>
+</ul>
+<p>以阿里妈妈为例，两条思考主线：</p>
+<ul>
+<li>用什么模型结构捕捉数据中用户兴趣模式：attention，GRU，memory</li>
+<li>用什么技术架构容纳更多的数据：单行为到多行为，短序列到长序列</li>
+</ul>
+<hr>
+<h1 id="技术破局点重新定义和设计新的系统架构">技术破局点：重新定义和设计新的系统架构</h1>
+<p>深度学习第一波的红利已被耗尽，进入瓶颈期：</p>
+<ul>
+<li>模型架构设计的边际收益越来越低</li>
+<li>数据饥饿</li>
+<li>算法的优化需要工程系统配套升级</li>
+</ul>
+<p>工业级深度学习2.0阶段：</p>
+<ul>
+<li>深度学习不再是利器，而是基建</li>
+<li>随模型复杂度的增大，算力从助推力变成制约</li>
+</ul>
+<p>无法靠算法的单点突破收割技术红利，而是要走向更复杂和系统的技术体系推进。重新定义和设计新的系统架构。</p>
+<p>要求算法工程师必须兼顾系统工程师的思维。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[《深度学习推荐系统》]]></title>
+        <id>https://chensi01.github.io/post/lesslessshen-du-xue-xi-tui-jian-xi-tong-greatergreater/</id>
+        <link href="https://chensi01.github.io/post/lesslessshen-du-xue-xi-tui-jian-xi-tong-greatergreater/">
+        </link>
+        <updated>2021-04-13T03:03:33.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="推荐序">推荐序</h1>
+<ul>
+<li>深度学习对于工业界的价值：提供了全新的算法研发范式，提升了生产力。</li>
+<li>工业界模型设计背后真正的“银弹”：目的是解决什么样的问题。</li>
+<li>工业级深度学习2.0阶段的技术破局点：重新定义和设计新的系统架构。</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[vscode+latex]]></title>
         <id>https://chensi01.github.io/post/vscodelatex/</id>

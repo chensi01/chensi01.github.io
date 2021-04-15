@@ -2,27 +2,23 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>vscode+latex | Chensi&#39;s Blog</title>
+<title>《深度学习推荐系统》 - 推荐序 | Chensi&#39;s Blog</title>
 <link rel="shortcut icon" href="https://chensi01.github.io//favicon.ico?v=1618457288923">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://chensi01.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="vscode+latex | Chensi&#39;s Blog - Atom Feed" href="https://chensi01.github.io//atom.xml">
+<link rel="alternate" type="application/atom+xml" title="《深度学习推荐系统》 - 推荐序 | Chensi&#39;s Blog - Atom Feed" href="https://chensi01.github.io//atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="参考：https://blog.csdn.net/qq_28303495/article/details/89848209
+    <meta name="description" content="key point
 
-安装LaTeX Workshop插件
-配置
-
-打开settings.json
-增加配置
-重启vscode
+深度学习对于工业界的价值：提供了设计与实现解耦算法研发范式，提升了生产力。
+工业界模型设计背后真正的“银弹”：目的是解决什么样的问题。
+工业级深度学习2.0阶段的技术破局点：重新定义和设计新的系统架构。
 
 
-
-增..." />
+深度学习提..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -101,117 +97,77 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              vscode+latex
+              《深度学习推荐系统》 - 推荐序
             </h2>
             <div class="post-info">
               <span>
                 2021-04-13
               </span>
               <span>
-                2 min read
+                3 min read
               </span>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>参考：https://blog.csdn.net/qq_28303495/article/details/89848209</p>
+                <h1 id="key-point">key point</h1>
+<ul>
+<li>深度学习对于工业界的价值：提供了设计与实现解耦算法研发范式，提升了生产力。</li>
+<li>工业界模型设计背后真正的“银弹”：目的是解决什么样的问题。</li>
+<li>工业级深度学习2.0阶段的技术破局点：重新定义和设计新的系统架构。</li>
+</ul>
+<hr>
+<h1 id="深度学习提供了算法研发新范式">深度学习提供了算法研发新范式</h1>
 <ol>
-<li>安装LaTeX Workshop插件</li>
-<li>配置
-<ol>
-<li>打开settings.json</li>
-<li>增加配置</li>
-<li>重启vscode</li>
-</ol>
+<li>传统机器学习（1）模型假设过于严苛（2）在计算规模巨大的工业界上难实现，要求工程师有（1）专业的建模与优化能力（2）专业的分布式计算编程能力，所以难以应用。</li>
+<li>深度学习：提供了设计与实现解耦算法研发范式，极大地提升了生产力。
+<ul>
+<li>开源的深度学习框架提供了封装好的（1）基础模块（2）优化器，降低了算法设计和实现和难度；</li>
+<li>模型的设计与实现解耦：算法工程师集中进行领域问题的理解和模型设计，软件工程师集中进行计算效率和性能的优化。</li>
+</ul>
 </li>
 </ol>
-<p>增加的配置如下：</p>
-<pre><code>   {
-    &quot;latex-workshop.latex.recipes&quot;: [{
-    &quot;name&quot;: &quot;xelatex&quot;,
-    &quot;tools&quot;: [
-        &quot;xelatex&quot;
-    ]
-  }, {
-    &quot;name&quot;: &quot;latexmk&quot;,
-    &quot;tools&quot;: [
-        &quot;latexmk&quot;
-    ]
-  },
-  {
-    &quot;name&quot;: &quot;pdflatex -&gt; bibtex -&gt; pdflatex*2&quot;,
-    &quot;tools&quot;: [
-        &quot;pdflatex&quot;,
-        &quot;bibtex&quot;,
-        &quot;pdflatex&quot;,
-        &quot;pdflatex&quot;
-    ]
-  }
-  ],
-  &quot;latex-workshop.latex.tools&quot;: [{
-  &quot;name&quot;: &quot;latexmk&quot;,
-  &quot;command&quot;: &quot;latexmk&quot;,
-  &quot;args&quot;: [
-    &quot;-synctex=1&quot;,
-    &quot;-interaction=nonstopmode&quot;,
-    &quot;-file-line-error&quot;,
-    &quot;-pdf&quot;,
-    &quot;%DOC%&quot;
-  ]
-  }, {
-  &quot;name&quot;: &quot;xelatex&quot;,
-  &quot;command&quot;: &quot;xelatex&quot;,
-  &quot;args&quot;: [
-    &quot;-synctex=1&quot;,
-    &quot;-interaction=nonstopmode&quot;,
-    &quot;-file-line-error&quot;,
-    &quot;%DOC%&quot;
-  ]
-  }, {
-  &quot;name&quot;: &quot;pdflatex&quot;,
-  &quot;command&quot;: &quot;pdflatex&quot;,
-  &quot;args&quot;: [
-    &quot;-synctex=1&quot;,
-    &quot;-interaction=nonstopmode&quot;,
-    &quot;-file-line-error&quot;,
-    &quot;%DOC%&quot;
-  ]
-  }, {
-  &quot;name&quot;: &quot;bibtex&quot;,
-  &quot;command&quot;: &quot;bibtex&quot;,
-  &quot;args&quot;: [
-    &quot;%DOCFILE%&quot;
-  ]
-  }],
-  &quot;latex-workshop.view.pdf.viewer&quot;: &quot;tab&quot;,
-  &quot;latex-workshop.latex.clean.fileTypes&quot;: [
-  &quot;*.aux&quot;,
-  &quot;*.bbl&quot;,
-  &quot;*.blg&quot;,
-  &quot;*.idx&quot;,
-  &quot;*.ind&quot;,
-  &quot;*.lof&quot;,
-  &quot;*.lot&quot;,
-  &quot;*.out&quot;,
-  &quot;*.toc&quot;,
-  &quot;*.acn&quot;,
-  &quot;*.acr&quot;,
-  &quot;*.alg&quot;,
-  &quot;*.glg&quot;,
-  &quot;*.glo&quot;,
-  &quot;*.gls&quot;,
-  &quot;*.ist&quot;,
-  &quot;*.fls&quot;,
-  &quot;*.log&quot;,
-  &quot;*.fdb_latexmk&quot;
-  ],
-  }
-</code></pre>
+<hr>
+<h1 id="银弹要解决什么问题">“银弹”：要解决什么问题</h1>
+<blockquote>
+<p>银弹：用来比喻具有极端有效性的解决方法，作为杀手锏、王牌等的代称。</p>
+</blockquote>
+<p>工业界的两种研发方法：</p>
+<ul>
+<li>拿着锤子找钉子：尝试各种他人的创新点。（不是能力不足，而是思维惯性和缺乏技术自信）</li>
+<li>问题驱动：定义问题，思考技术需求，寻找/构思对应的技术工具。</li>
+</ul>
+<p>以阿里妈妈为例，两条思考主线：</p>
+<ul>
+<li>用什么模型结构捕捉数据中用户兴趣模式：attention，GRU，memory</li>
+<li>用什么技术架构容纳更多的数据：单行为到多行为，短序列到长序列</li>
+</ul>
+<hr>
+<h1 id="技术破局点重新定义和设计新的系统架构">技术破局点：重新定义和设计新的系统架构</h1>
+<p>深度学习第一波的红利已被耗尽，进入瓶颈期：</p>
+<ul>
+<li>模型架构设计的边际收益越来越低</li>
+<li>数据饥饿</li>
+<li>算法的优化需要工程系统配套升级</li>
+</ul>
+<p>工业级深度学习2.0阶段：</p>
+<ul>
+<li>深度学习不再是利器，而是基建</li>
+<li>随模型复杂度的增大，算力从助推力变成制约</li>
+</ul>
+<p>无法靠算法的单点突破收割技术红利，而是要走向更复杂和系统的技术体系推进。重新定义和设计新的系统架构。</p>
+<p>要求算法工程师必须兼顾系统工程师的思维。</p>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li><a href="#key-point">key point</a></li>
+<li><a href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%8F%90%E4%BE%9B%E4%BA%86%E7%AE%97%E6%B3%95%E7%A0%94%E5%8F%91%E6%96%B0%E8%8C%83%E5%BC%8F">深度学习提供了算法研发新范式</a></li>
+<li><a href="#%E9%93%B6%E5%BC%B9%E8%A6%81%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98">“银弹”：要解决什么问题</a></li>
+<li><a href="#%E6%8A%80%E6%9C%AF%E7%A0%B4%E5%B1%80%E7%82%B9%E9%87%8D%E6%96%B0%E5%AE%9A%E4%B9%89%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%96%B0%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84">技术破局点：重新定义和设计新的系统架构</a></li>
+</ul>
+
               </div>
             </div>
           </article>
@@ -220,9 +176,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://chensi01.github.io/post/how-to-spot-a-liar/">
+            <a href="https://chensi01.github.io/post/lesslessshen-du-xue-xi-tui-jian-xi-tong-greatergreater/">
               <h3 class="post-title">
-                How to spot a liar
+                《深度学习推荐系统》
               </h3>
             </a>
           </div>
